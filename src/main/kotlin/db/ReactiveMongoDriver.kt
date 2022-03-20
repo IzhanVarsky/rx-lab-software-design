@@ -11,7 +11,7 @@ object ReactiveMongoDriver {
     enum class Actions(val value: String, val actionFun: (QueryMap) -> Observable<String>) {
         REGISTER("/register", ::registrationRequest),
         ADD_PRODUCT("/add-product", ::addProductRequest),
-        PRODUCT("/product", ::getProductsRequest),
+        GET_PRODUCTS("/get-products", ::getProductsRequest),
         DROP_USERS("/drop-users", ::dropUsersCollection),
         DROP_PRODUCTS("/drop-products", ::dropProductsCollection),
     }

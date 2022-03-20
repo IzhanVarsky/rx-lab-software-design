@@ -56,7 +56,7 @@ class Tests {
                     Product("kek", USD.convertTo(RUB, 200.0), RUB),
                     Product("lol", EUR.convertTo(RUB, 300.0), RUB),
                 ).joinToString("\n") { it.toString() } + "\n",
-                getReq(Actions.PRODUCT, id_key to 1)
+                getReq(Actions.GET_PRODUCTS, id_key to 1)
             )
 
             assertEquals(
@@ -65,7 +65,7 @@ class Tests {
                     Product("kek", USD.convertTo(USD, 200.0), USD),
                     Product("lol", EUR.convertTo(USD, 300.0), USD),
                 ).joinToString("\n") { it.toString() } + "\n",
-                getReq(Actions.PRODUCT, id_key to 2)
+                getReq(Actions.GET_PRODUCTS, id_key to 2)
             )
 
             assertEquals(
@@ -74,7 +74,7 @@ class Tests {
                     Product("kek", USD.convertTo(EUR, 200.0), EUR),
                     Product("lol", EUR.convertTo(EUR, 300.0), EUR),
                 ).joinToString("\n") { it.toString() } + "\n",
-                getReq(Actions.PRODUCT, id_key to 3)
+                getReq(Actions.GET_PRODUCTS, id_key to 3)
             )
 
             assertEquals("SUCCESS", getReq(Actions.DROP_USERS))
